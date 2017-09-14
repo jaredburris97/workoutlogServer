@@ -6,8 +6,6 @@ var http = require('http').Server(app);
 var bodyParser = require('body-parser'); // added in module 7
 var sequelize = require('./db.js');		// added in module 9
 
-var User = sequelize.import(__dirname + '\\models\\user');
-
 //Create table
 
 sequelize.sync();	//User.sync({force:true});	//WARNING: THIS DROPS(DELETES) USER TABLE
