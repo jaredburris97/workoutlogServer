@@ -1,8 +1,8 @@
 require('dotenv').config();
 
 var express = require('express');
-var http = require('http').Server(app);
 var app = express();
+var http = require('http').Server(app);
 var bodyParser = require('body-parser'); // added in module 7
 var sequelize = require('./db.js');		// added in module 9
 
@@ -33,6 +33,6 @@ app.use('/api/test', function(req,res){
 	res.send('Hello World, from server app.js!')
 });
 
-http.listen(3000, function(){
+http.listen(process.env.PORT || 3000, function(){
 	console.log("...App is listening (open) on 3000...");
 });
